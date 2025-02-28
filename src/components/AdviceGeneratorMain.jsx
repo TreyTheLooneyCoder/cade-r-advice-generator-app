@@ -2,14 +2,10 @@ import { React, useState } from 'react'
 import diceIcon from "../assets/icon-dice.svg";
 import desktopDivider from "../assets/pattern-divider-desktop.svg";
 import mobileDivider from "../assets/pattern-divider-mobile.svg";
+import { AdviceFetch } from "../services/DataServices";
 
 const AdviceGeneratorMain = () => {
 
-  const AdviceFetch = async() => {
-    const promise = await fetch('https://api.adviceslip.com/advice');
-    const data = await promise.json();
-    return data;
-  }
 
   const [adviceNumber, setAdviceNumber] = useState(207);
   const [advice, setAdvice] = useState("Always seek out advice or opinions when making a decision.")
@@ -27,7 +23,7 @@ const AdviceGeneratorMain = () => {
 
       <div className='bg-gray-700 md:w-[27rem] mobile:w-[20rem] mobile-xs:w-[20rem] h-fit place-self-center rounded-xl mt-36 shadow-[0_0_4rem] shadow-gray-900'>
         <p className='text-green-400 text-center text-sm pt-5'>Advice #{ adviceNumber }</p>
-        <p className='text-white text-center text-3xl mobile-xs:text-xl pt-5'>"{ advice }"</p>
+        <p className='text-white text-center text-3xl mobile-xs:text-xl pt-5 tracking-tight'>"{ advice }"</p>
 
         <img src={ desktopDivider } className='hidden lg:block pt-10 pb-5 w-96 place-self-center' alt="divider for button" />
         <img src={ mobileDivider } className='block lg:hidden pt-10 pb-5 mobile-xs:pb-1  w-96 place-self-center' alt="divider for button" />
