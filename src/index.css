@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 768px) {
+    .mobile\:w-\[20rem\] {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .mobile-xs\:w-\[20rem\] {
+        width: 15rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .mobile-xs\:text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem ;
+    }
+}
+
+@media (max-width: 375px) {
+    .mobile-xs\:pb-1 {
+        padding-bottom: 0.25rem;
+    }
+}
